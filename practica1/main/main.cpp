@@ -415,9 +415,108 @@ int ejercicio30(){
     return 0;
 }
 
+int problema1(){
+    char letra;
+    cout << "Ingrese un caracter:" << endl;
+    cin >> letra;
+
+    if(isalpha(letra)){
+        letra = tolower(letra);
+        if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+            cout << endl << letra << " es una vocal." << endl;
+        }
+
+        else{
+            cout << endl << letra << " es una consonante." << endl;
+        }
+    }
+    else{
+        cout << endl << letra << " no es una letra." << endl;
+    }
+    return 0;
+}
+
+int problema2(){
+    int plata, devuelta50k, devuelta20k, devuelta10k, devuelta5k, devuelta2k, devuelta1k, devuelta500, devuelta200, devuelta100, devuelta50;
+    cout << "Ingrese la cantidad de dinero:" << endl;
+    cin >> plata;
+    int faltante = plata;
+
+    devuelta50k = faltante/50000;
+    faltante %= 50000;
+    devuelta20k = faltante/20000;
+    faltante %= 20000;
+    devuelta10k = faltante/10000;
+    faltante %= 10000;
+    devuelta5k = faltante/5000;
+    faltante %= 5000;
+    devuelta2k = faltante/2000;
+    faltante %= 2000;
+    devuelta1k = faltante/1000;
+    faltante %= 1000;
+
+    devuelta500 = faltante/500;
+    faltante %= 500;
+    devuelta200 = faltante/200;
+    faltante %= 200;
+    devuelta100 = faltante/100;
+    faltante %= 100;
+    devuelta50 = faltante/50;
+    faltante %= 50;
+
+    cout << endl << "50000: " << devuelta50k << endl;
+    cout << "20000: " << devuelta20k << endl;
+    cout << "10000: " << devuelta10k << endl;
+    cout << "5000: " << devuelta5k << endl;
+    cout << "2000: " << devuelta2k << endl;
+    cout << "1000: " << devuelta1k << endl;
+    cout << "500: " << devuelta500 << endl;
+    cout << "200: " << devuelta200 << endl;
+    cout << "100: " << devuelta100 << endl;
+    cout << "50: " << devuelta50 << endl;
+    cout << "Faltante: " << faltante << endl;
+    return 0;
+}
+
+int problema3(){
+    int mes, dia;
+    do{
+        cout << "Introduzca el numero del mes: " <<  endl;
+        cin >> mes;
+
+    }while(mes>12 || mes < 0);
+
+    cout << "Introduzca el numero del dia: " <<  endl;
+    cin >> dia;
+    if(dia>31 || dia<1){
+        cout <<  endl << dia << "/" << mes << " es una fecha invalida" << endl;
+    }
+    else{
+        if(mes==2){
+            if(dia==29){
+                cout <<  endl << dia << "/" << mes << " es valida en bisiesto" << endl;}
+            else if (dia>29){
+                cout <<  endl << dia << "/" << mes <<  " es una fecha invalida" << endl;
+            }
+            else {
+                cout <<  endl << dia << "/" << mes << " es una fecha valida" << endl;
+            }
+        }
+
+        else if (dia == 31 && mes%2 != 0){
+            cout <<  endl << dia << "/" << mes << " es una fecha invalida" << endl;
+        }
+        else{
+            cout <<  endl << dia << "/" << mes << " es una fecha valida" << endl;
+        }
+    }
+
+    return 0;
+}
+
 int main()
 {
-    ejercicio30();
+    problema3();
 }
 
 
