@@ -162,6 +162,192 @@ int ejercicio10(){
     return 0;
 }
 
+int ejercicio11(){
+    int a;
+    cout<<"Digite un numero"<< endl;
+    cin>>a;
+    for(int i=1; i<11;i++){
+        cout<<a<<" * "<<i<<" = "<< a*i<<endl;
+
+    }
+    return 0;
+}
+
+int ejercicio12() {
+    int N;
+
+
+    cout << "Introduce un numero entero : ";
+    cin >> N;
+    int pot = N;
+    for (int i = 1; i <= 5; ++i) {
+
+        cout << "N^" << i << " = " << pot << endl;
+        pot *= N;
+    }
+
+    return 0;
+}
+
+int ejercicio13(){
+    int a,c=0;
+    cout<<"Escriba un numero: ";
+    cin>> a;
+    cout<<"Sus divisores son : ";
+    for(int i=1;i<=a;i++){
+        if(a%i==0){
+            cout<< i<<" ";
+            c++;
+        }
+    }
+    cout<< endl;
+    return 0;
+}
+
+int ejercicio14(){
+
+    cout << "Columna 1" << "      " << "Columna 2" << endl;
+    cout << "--------------------------" << endl;
+
+    for (int i = 1, j = 50; i <= 50; ++i, --j) {
+        cout << i;
+        cout << "      ";
+        cout << j << endl;
+    }
+
+    return 0;
+}
+
+int ejercicio15(){
+    int numero;
+    int sumatoria = 0;
+    do {
+        cout << "Escriba un numero (0 para salir): ";
+        cin >> numero;
+        if (numero != 0) {
+            sumatoria += numero;
+        }
+    } while (numero != 0);
+    cout << "La sumatoria de estos numeros es: " << sumatoria << endl;
+
+    return 0;
+}
+
+int ejercicio16(){
+    int numero;
+    int suma = 0;
+    int i=0;
+    int prom;
+    do {
+        cout << "Escriba un numero (0 para salir): ";
+        cin>> numero;
+        if  (numero !=0){
+            suma +=numero;
+            i=i+1;
+        }
+        prom= suma/i;
+    } while(numero !=0);
+    cout<< "El promedio es: "<< prom << endl;
+    return 0;
+}
+
+int ejercicio17(){
+    int numero;
+    int mayor = 0;
+    bool Num1 = true;
+
+    do {
+        cout << "Esciba un numero (0 para salir):" << endl;
+        cin >> numero;
+
+        if (numero != 0) {
+            if (Num1) {
+                mayor = numero;
+                Num1 = false;
+            } else if (numero > mayor) {
+                mayor = numero;
+            }
+        }
+
+    } while (numero != 0);
+    cout << "El numero mayor es: "<< mayor << endl;
+    return 0;
+}
+int ejercicio18(){
+    int N;
+    cout << "Escriba un numero: ";
+    cin >> N;
+    bool escuaperfecto = false;
+
+    int i = 1;
+    while (i * i <= N) {
+        if (i * i == N) {
+            escuaperfecto = true;
+            break;
+        }
+        i++;
+    }
+    if (escuaperfecto) {
+        cout << N << " Es un cuadrado perfecto" << endl;
+    } else {
+        cout << N << " No es un cuadrado perfecto" << endl;
+    }
+
+    return 0;
+}
+
+int ejercicio19(){
+
+    int N;
+    bool esPrimo = true;
+
+    cout << "Escriba un número: ";
+    cin >> N;
+
+    if (N < 1) {
+        esPrimo = false;
+    } else {
+        for (int i = 2; i < N; i++) {
+            if (N % i == 0) {
+                esPrimo = false;
+                break;
+            }
+        }
+    }
+    if (esPrimo) {
+        cout << N << " Es primo." << endl;
+    } else {
+        cout << N << " No primo." << endl;
+    }
+
+    return 0;
+}
+int ejercicio20(){
+    int N;
+    int Noriginal;
+    int inverso = 0;
+    int digito;
+
+    cout << "Escriba un numero: ";
+    cin >> N;
+
+    Noriginal = N;
+
+    while (N > 0) {
+        digito = N % 10;
+        inverso = inverso * 10 + digito;
+        N /= 10;
+    }
+
+    if (Noriginal == inverso) {
+        cout << Noriginal << " Es palindromo." << endl;
+    } else {
+        cout << Noriginal << " No es palindromo." << endl;
+    }
+
+    return 0;
+}
+
 int ejercicio21(){
 
     char letra;
