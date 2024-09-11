@@ -1,5 +1,6 @@
 //Codigo ejercicio 4
 int pot = 0;
+int int_led = 0;
 void setup()
 {
   pinMode(3, OUTPUT);
@@ -8,8 +9,10 @@ void setup()
 void loop()
 {
   pot = analogRead(A0);
-  digitalWrite(3, pot);
+  int_led = map(pot, 0, 1023, 0, 255);
+  analogWrite(3, int_led);
 }
+
 
 //Codigo ejercicio 5
 #include <LiquidCrystal.h>
