@@ -1,0 +1,30 @@
+//Codigo ejercicio 4
+int pot = 0;
+int int_led = 0;
+void setup()
+{
+  pinMode(3, OUTPUT);
+}
+
+void loop()
+{
+  pot = analogRead(A0);
+  int_led = map(pot, 0, 1023, 0, 255);
+  analogWrite(3, int_led);
+}
+
+
+//Codigo ejercicio 5
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(7, 8, 9, 10, 11, 12);
+
+void setup()
+{
+	lcd.begin(16,2);
+	lcd.print("Hola mundo");
+}
+
+void loop()
+{
+  
+}
