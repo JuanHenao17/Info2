@@ -8,13 +8,16 @@ void fun_a(int *px, int *py);
 void fun_b(int a[], int tam);
 void fun_c_corregida(double a[], int n, double *promedio, double *suma);
 void problema2();
+int problema4();
 void problema6();
+void problema8();
 void problema12();
 void problema14();
 void imprimirMatriz(int matriz[N][N]);
 void rotar90(int matriz[N][N], int rotada[N][N]);
 void problema16();
 unsigned long long factorial(int num);
+void problema18();
 
 int main()
 {
@@ -30,7 +33,7 @@ int main()
     cout << endl << "El promedio esperado es: 5.529" << endl;
     cout << "El promedio resultante es: " << promedio << endl;
 
-    problema16();
+    problema8();
 
 }
 
@@ -84,6 +87,20 @@ void problema2(){
         }
 }
 
+int problema4(){
+
+    string cadena;
+    cout << "Ingrese una cadena: ";
+    cin >> cadena;
+
+    int numero = 0;
+    for (int i = 0; i < cadena.length(); i++) {
+        char c = cadena[i];
+        numero = numero * 10 + (c - '0');
+    }
+    return numero;
+}
+
 void problema6(){
 
     string cadena;
@@ -103,7 +120,28 @@ void problema6(){
 
 }
 
+void problema8(){
 
+    string cadena;
+    cout << "Ingrese una cadena: ";
+    cin >> cadena;
+
+    string texto = "";
+    string numeros = "";
+
+    for (int i = 0; i < cadena.size(); i++) {
+        char c = cadena[i];
+        if (isdigit(c)) {
+            numeros += c;
+        } else {
+            texto += c;
+        }
+    }
+
+    cout << endl << "Original: " << cadena << endl;
+    cout << "Texto: " << texto << endl;
+    cout << "Numero: " << numeros << endl;
+}
 
 void problema14(){
 
@@ -260,7 +298,6 @@ void problema16() {
         return;
     }
 
-    // Función para calcular el factorial
 
     // Calcular el número de combinaciones C(2n, n)
     unsigned long long factorial_2n = factorial(2 * n);
@@ -277,4 +314,34 @@ unsigned long long factorial(int num) {
         result *= i;
     }
     return result;
+}
+
+void problema18(){
+
+    int n;
+    cout << "Ingresa el valor de n: ";
+    cin >> n;
+    int copiaN = n;
+    n--;
+
+    int numeros[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int factorial[11] = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800};
+
+    string permutacion = "";
+
+    // Calcular la enésima permutación
+    for (int i = 9; i >= 0; i--) {
+        int j = n / factorial[i];
+        permutacion += to_string(numeros[j]);
+
+            // Remover el número usado, desplazando los elementos a la izquierda
+            for (int k = j; k < 9; k++) {
+                numeros[k] = numeros[k + 1];
+            }
+
+        // Actualizar n para el siguiente dígito
+        n %= factorial[i];
+    }
+
+    cout << endl << "La permutacion numero " << copiaN << " es: " << permutacion << endl;
 }
