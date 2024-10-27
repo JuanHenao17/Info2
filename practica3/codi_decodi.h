@@ -3,16 +3,15 @@
 #include <string>
 using namespace std;
 
-void programa(string nombre_archivo, string archivo_salida);
-string codificacion_metodo2(string nombre_archivo, int semilla);
-string decodificacion_metodo2(string nombre_archivo, int semilla);
-string char2binario(string nombre_archivo);
+string codificacion_metodo2(const string &nombre_archivo, int semilla);
+string decodificacion_metodo2(const string &nombre_archivo, int semilla);
+string char2binario(string texto);
 void escribirArchivoBinario(const string &nombreArchivo, const string &contenido);
 string leerArchivoPorCaracter(string nombreArchivo);
 string binarioACaracteres(string binario);
 void escribirArchivo(string nombreArchivo, string texto, bool limpiar);
-string toBinaryString(const string& input);
-string encodeBlock(string block, int blockNumber);
-void encodeFile(const string& inputFileName, const string& outputFileName, int n);
+string codificacion_metodo1(const string& block, int count0s, int count1s);
+string encodeFile(const string& cadena, int n);
+string decodeFile(const string& inputFileName, int n);
 
 #endif // CODI_DECODI_H
